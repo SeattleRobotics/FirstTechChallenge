@@ -1,0 +1,56 @@
+*Core [-*calls getin-> *input] [*input -*sends button press-> *forklift]
+                                   [\-*sends button press-> *grabber]
+                                   [|-*sends button press-> *mecam wheels]
+                                   [|-sends button press-> imageRecogTest] [-sends image data-> telemetry]
+
+$$Auto ($$-does stuff w/out sensor data-) [-gets sensor input-> ???] (-evaluates sensor data & decides what to do-) [input -sends data-> forklift] 
+
+
+
+[]-------------------------AUTO CODE------------------------------[]
+|                                                                  |
+[]------------------Stuff Without Live Eval-----------------------[]
+| $$ 1. Drop Jewel Arm                                              |
+| $$ 2. Check Color sensor                                          |
+| $$ 3. Move Robot Accordingly                                      |
+|                                                                  |
+[]------------------------Sensor Input----------------------------[]
+| 1. Proximity Sensor                                              |
+| 2. Phone Camera                                                  |
+| 3. Color Sensor                                                  |
+|                                                                  |
+[]--------------------Sensor Data Evaluation----------------------[]
+| 1. Trained phone camera recognises cubes ???                     |
+| 2. camera plus proximity sensor used to advance to cubes         |
+| 3. Color sensor used as backup to check borders between cubes    |
+|                                                                  |
+|                                                                  |
+|                                                                  |
+[]----------------------------------------------------------------[]
+
+
+
+
+
+Future changes and cleaning up:
+    $$ Color sensor - clean up, make callable from other classes
+    $$ Jewel arm - put in all code
+    $$ autocore - program (make sure to measure distances and come up with accurate algorithms to take in sensor data and get cubes)
+    $$ core - add more functionality, currently is pretty useless (think of some things that could be moved there)
+    inputSensor - program (like the input file for core, but for autocore and with sensors)
+    [See about phone training software]
+    [see about proximity sensor]
+    [figure out way to implement color sensor for cube borders]
+    [come up with working automatic period algorithm]
+    [CLEAN UP CODE (i.e. useless imports)]
+    
+    
+    
+    
+    
+    
+    
+AutoRed1 - [calls init{passes side(1), color(Red)} -> AutoMain] (Automain -> Does Stuff)
+AutoRed2 - [calls init{passes side(2), color(Red)} |]
+AutoBlue1 - [calls init{passes side(2), color(Blue)}\]
+AutoBlue2 - [calls init{passes side(2), color(Blue)}-|]
